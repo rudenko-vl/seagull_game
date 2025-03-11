@@ -37,12 +37,12 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelectorAll(".ball").forEach(ball => {
             ball.style.display = "block";
         });
-        box.style.display = 'block';
+        box.style.display = 'flex';
         gameContainer.style.display = 'none';
         message.textContent = "";
 
         if (selectedIndex === ballPosition) {
-            seagull.src = './images/ch.jpg';
+            seagull.src = './images/ch1.jpg';
         } else {
             seagull.src = './images/angry_bird.jpg';
         }
