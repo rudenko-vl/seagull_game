@@ -4,18 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seagull game</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" type="image/png" href="./images/pngimg.png">
 </head>
 <body>
 
+<div class="container">
     <h1>Найди добрую чайку! 😉</h1>
 
     <div class="game-container">
-        <div class="cup" data-index="0">1</div>
-        <div class="cup" data-index="1">2</div>
-        <div class="cup" data-index="2">3</div>
-        <div class="cup" data-index="3">4</div>
+        <div class="cup" data-index="0"></div>
+        <div class="cup" data-index="1"></div>
+        <div class="cup" data-index="2"></div>
+        <div class="cup" data-index="3"></div>
     </div>
 
     <p id="message"></p>
@@ -23,7 +25,27 @@
         <img src="#" alt="img" class="img-animate" id="seagull">
         <button class="restart-btn" id="restart">Сыграть снова</button>
     </div>
+     <ul class="help-btns-box list">
+        <li title="Убрать два варианта" class="help-btn1"><img src="./images/50.png" alt="50:50"></li>
+        <li title="Помощь зала" class="help-btn2"><img src="./images/people.png" alt="people"></li>
+        <li title="Звонок другу" class="help-btn3"><img src="./images/phone.png" alt="phone"></li>
+     </ul>
+     <div class="spinner is-hidden"></div>
+     <div class="connect-box" style="display: none;">
+        <h1>К сожалению, нет мобильной связи. Звонок не возможен 😄📵</h1>
+        <button class="connect-btn">Ok</button>
+     </div>
+</div>
+<div class="backdrop is-hidden" data-modal>
+    <div class="modal">
+    <div class="diargam-box">
+        <canvas id="myChart" class="canvas"></canvas>
+    </div>
+    </div>
+  </div>
 
     <script src="./js/script.js"></script>
+    <script src="./js/modal.js"></script>
+    <script src="./js/diagramm.js"></script>
 </body>
 </html>
