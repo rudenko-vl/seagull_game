@@ -18,6 +18,35 @@ img {
     display: block;
   }
 
+  header {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 5px;
+  }
+
+  .header-title {
+    margin: 0;
+    padding: 0;
+  }
+
+  @media screen and (min-width: 820px) {
+    .header-title {
+        font-size: 36px;
+      }
+}
+
+.header-img {
+    width: 80px;
+    height: 100px;
+  }
+  @media screen and (min-width: 820px) {
+    .header-img {
+        width: 100px;
+        height: 150px;
+      }
+}
+
   .list {
     list-style: none;
   }
@@ -36,6 +65,7 @@ h1 {
 }
 
 .spinner {
+    display: none;
     margin: 0 auto;
     width: 60px;
     height: 60px;
@@ -134,21 +164,11 @@ h1 {
 }
 
 .img-box {
-    padding: 10px;
-    width: 250px;
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     gap: 30px;
 }
-
-@media screen and (min-width: 720px) {
-    .img-box {
-        width: 700px;
-    }
-  }
 
 .help-btns-box {
     display: flex;

@@ -11,16 +11,18 @@
 <body>
 
 <div class="container">
-    <h1>Найди добрую чайку! 😉</h1>
-
+    <header>
+        <h1 class="header-title">Найди добрую чайку!</h1>
+        <img class="header-img" src="./images/123.png" alt="img">
+    </header>
     <div class="game-container">
         <div class="cup" data-index="0"></div>
         <div class="cup" data-index="1"></div>
         <div class="cup" data-index="2"></div>
         <div class="cup" data-index="3"></div>
     </div>
-
     <p id="message"></p>
+
     <div class="img-box">
         <img src="#" alt="img" class="img-animate" id="seagull">
         <button class="restart-btn" id="restart">Сыграть снова</button>
@@ -30,7 +32,7 @@
         <li title="Помощь зала" class="help-btn2"><img src="./images/people.png" alt="people"></li>
         <li title="Звонок другу" class="help-btn3"><img src="./images/phone.png" alt="phone"></li>
      </ul>
-     <div class="spinner is-hidden"></div>
+     <div class="spinner"></div>
      <div class="connect-box" style="display: none;">
         <h1>К сожалению, нет мобильной связи. Звонок не возможен 😄📵</h1>
         <button class="connect-btn">Ok</button>

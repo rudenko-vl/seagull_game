@@ -32,10 +32,10 @@ document.addEventListener("DOMContentLoaded", () => {
         gameContainer.style.display = 'none';
         HelpBtns.style.display = 'none';
         message.textContent = "";
-        spinner.classList.remove('is-hidden');
+        spinner.style.display = 'block';
 
         setTimeout(()=> {
-            spinner.classList.add('is-hidden');
+            spinner.style.display = 'none';
             connectBox.style.display = 'block';
         }, 3000)
     })
