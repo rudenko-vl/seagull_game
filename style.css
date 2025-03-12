@@ -110,6 +110,11 @@ h1 {
 .cup:hover {
     background-color: #decc09;
 }
+.unactive {
+    background-color: red;
+    pointer-events: none;
+
+}
 
 #seagull {
     max-width: 450px;
@@ -174,12 +179,14 @@ h1 {
     gap: 20px;
     margin: 40px auto;
     >li {
-        width: 110px;
-        height: 80px;
         cursor: pointer;
-        border-radius: 50%;
-        overflow: hidden;
     }
+}
+.img-wrap {
+    width: 110px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
 }
 
 @media screen and (min-width: 480px) {
@@ -187,6 +194,42 @@ h1 {
         flex-direction: row;
     }
   }
+
+  .help-btn1,
+  .help-btn2 {
+    position: relative;
+  }
+
+  .help-btn1::before,
+  .help-btn2::after {
+    position: absolute;
+    left: 55px;
+    top: -5px;
+    content: "";
+    width: 5px;
+    height: 100px;
+    background-color: transparent;
+    transform: rotate(55deg);
+}
+.help-btn1::after,
+.help-btn2::before {
+  position: absolute;
+  left: 55px;
+  top: -5px;
+  content: "";
+  width: 5px;
+  height: 100px;
+  background-color: transparent;
+  transform: rotate(-55deg);
+}
+
+.help-btn-unactive::before {
+    background-color: red;
+}
+
+.help-btn-unactive::after {
+    background-color: red;
+}
 
   /* ============= Modal */
 

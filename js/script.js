@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const connectBtn = document.querySelector(".connect-btn");
     const HelpBtns = document.querySelector(".help-btns-box");
     const HelpBtn1 = document.querySelector(".help-btn1");
+    const HelpBtn2 = document.querySelector(".help-btn2");
     const HelpBtn3 = document.querySelector(".help-btn3");
 
     let seagullPosition = getRandomPosition();
@@ -18,12 +19,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     HelpBtn1.addEventListener('click', ()=> {
-        const availableIndexes = [...Array(4).keys()].filter(i => i !== seagullPosition);
-        
-       cups[availableIndexes[0]].style.backgroundColor = 'red';
-       cups[availableIndexes[1]].style.backgroundColor = 'red';
-       cups[availableIndexes[0]].textContent = 'X';
+        HelpBtn1.classList.add('help-btn-unactive');
+        const availableIndexes = [0, 1, 2, 3].filter(i => i !== seagullPosition);
+       cups[availableIndexes[2]].textContent = 'X';
        cups[availableIndexes[1]].textContent = 'X';
+       cups[availableIndexes[2]].classList.add('unactive');
+       cups[availableIndexes[1]].classList.add('unactive');
         
     })
 
@@ -43,9 +44,17 @@ document.addEventListener("DOMContentLoaded", () => {
     connectBtn.addEventListener('click', ()=> {
         setupGame();
         cups.forEach(cup => {
-            cup.style.backgroundColor = '#b1a300'
+            if (cup.classList.contains('unactive')){
+                cup.classList.remove('unactive');
+            }
         });
         connectBox.style.display = 'none';
+        if (HelpBtn2.classList.contains('help-btn-unactive')) {
+            (HelpBtn2.classList.remove('help-btn-unactive'))
+        }
+        if (HelpBtn1.classList.contains('help-btn-unactive')) {
+            (HelpBtn1.classList.remove('help-btn-unactive'))
+        }
     })
 
     function setupGame() {
@@ -82,8 +91,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     restartButton.addEventListener("click", () => {
         cups.forEach(cup => {
-            cup.style.backgroundColor = '#b1a300'
+            if (cup.classList.contains('unactive')){
+                cup.classList.remove('unactive');
+            }
         });
+        if (HelpBtn2.classList.contains('help-btn-unactive')) {
+            (HelpBtn2.classList.remove('help-btn-unactive'))
+        }
+        if (HelpBtn1.classList.contains('help-btn-unactive')) {
+            (HelpBtn1.classList.remove('help-btn-unactive'))
+        }
         seagullPosition = getRandomPosition();
         setupGame();
     });
