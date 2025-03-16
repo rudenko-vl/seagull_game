@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const cups = document.querySelectorAll(".cup");
+    const cups = document.querySelectorAll(".card");
+    const cards = document.querySelectorAll(".card-front");
     const box = document.querySelector(".img-box");
     const gameContainer = document.querySelector(".game-container");
     const seagull = document.getElementById("seagull");
@@ -21,8 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
     HelpBtn1.addEventListener('click', ()=> {
         HelpBtn1.classList.add('help-btn-unactive');
         const availableIndexes = [0, 1, 2, 3].filter(i => i !== seagullPosition);
-       cups[availableIndexes[2]].textContent = 'X';
-       cups[availableIndexes[1]].textContent = 'X';
+        cards[availableIndexes[2]].textContent = 'X';
+        cards[availableIndexes[1]].textContent = 'X';
        cups[availableIndexes[2]].classList.add('unactive');
        cups[availableIndexes[1]].classList.add('unactive');
         
@@ -64,9 +65,9 @@ document.addEventListener("DOMContentLoaded", () => {
         HelpBtn1.disabled = false;
         message.textContent = "Выбери квадрат, под которым спрятана добрая чайка!";
         box.style.display = 'none'
-        cups.forEach(cup => {
+        cards.forEach(card => {
             counter++
-            cup.textContent = counter
+            card.textContent = counter
         });
         restartButton.style.display = "none";
     }
